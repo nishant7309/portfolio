@@ -169,7 +169,8 @@ function initTypingEffect() {
 
     const text = typingElement.textContent;
     const roles = [
-        'AI Researcher',
+        'LLM Researcher @ CYNICS',
+        'AI Research Mentor @ TheLabCompanyInc',
         'Published @ NeurIPS 2025 & EMNLP 2025',
         'Computer Engineering @ Purdue'
     ];
@@ -183,7 +184,7 @@ function initTypingEffect() {
         const currentRole = roles[roleIndex];
 
         if (isPaused) {
-            setTimeout(type, 2000);
+            setTimeout(type, 2500);
             isPaused = false;
             isDeleting = true;
             return;
@@ -198,7 +199,7 @@ function initTypingEffect() {
                 roleIndex = (roleIndex + 1) % roles.length;
             }
 
-            setTimeout(type, 30);
+            setTimeout(type, 20);
         } else {
             typingElement.textContent = currentRole.substring(0, charIndex + 1);
             charIndex++;
@@ -207,7 +208,7 @@ function initTypingEffect() {
                 isPaused = true;
             }
 
-            setTimeout(type, 80);
+            setTimeout(type, 50);
         }
     }
 
