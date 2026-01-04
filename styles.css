@@ -405,6 +405,7 @@ img {
     font-weight: 600;
     color: var(--accent-secondary);
     margin-bottom: 24px;
+    min-height: 2.5rem;
 }
 
 .hero-quote {
