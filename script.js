@@ -219,21 +219,7 @@ function initTypingEffect() {
     }, 1500);
 }
 
-/* =============================================
-   PARALLAX EFFECT FOR ORBS
-   ============================================= */
-document.addEventListener('mousemove', (e) => {
-    const orbs = document.querySelectorAll('.orb');
-    const mouseX = e.clientX / window.innerWidth - 0.5;
-    const mouseY = e.clientY / window.innerHeight - 0.5;
-
-    orbs.forEach((orb, index) => {
-        const speed = (index + 1) * 20;
-        const x = mouseX * speed;
-        const y = mouseY * speed;
-        orb.style.transform = `translate(${x}px, ${y}px)`;
-    });
-});
+/* Parallax effect removed - decorative orbs hidden */
 
 /* =============================================
    ACTIVE NAV LINK ON SCROLL
@@ -261,18 +247,4 @@ window.addEventListener('scroll', () => {
     });
 });
 
-/* =============================================
-   CONSOLE GREETING
-   ============================================= */
-console.log(`
-%c👋 Hello there, curious developer!
 
-%cWelcome to Nishant Bhargava's Portfolio.
-If you're interested in AI Safety, Interpretability, or just want to chat,
-feel free to reach out!
-
-🔗 arXiv: https://arxiv.org/abs/2509.00591
-`,
-    'font-size: 20px; font-weight: bold;',
-    'font-size: 14px; color: #7c3aed;'
-);
