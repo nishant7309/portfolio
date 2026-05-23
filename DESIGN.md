@@ -195,6 +195,7 @@ No UI state depends on hue. The site uses:
 - The active terminal command and block cursor must stay on the same mobile prompt line.
 - Very narrow phones can reduce terminal ASCII and prompt text before allowing internal clipping.
 - Header commands collapse into the mobile menu before they crowd the status bar.
+- The mobile dropdown menu is opaque, never translucent or blurred.
 - Publications stay directly after the hero on every viewport.
 
 ## Do

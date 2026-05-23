@@ -1004,9 +1004,9 @@ textarea {
         align-items: stretch;
         gap: 0;
         padding: 8px 24px 24px;
-        background: color-mix(in srgb, var(--canvas) 96%, transparent);
+        background: var(--canvas);
         border-bottom: 1px solid var(--hairline);
-        backdrop-filter: blur(18px);
+        backdrop-filter: none;
     }
 
     .nav-menu.active {
@@ -1060,9 +1060,9 @@ textarea {
         align-items: stretch;
         gap: 0;
         padding: 8px 24px 24px;
-        background: color-mix(in srgb, var(--canvas) 96%, transparent);
+        background: var(--canvas);
         border-bottom: 1px solid var(--hairline);
-        backdrop-filter: blur(18px);
+        backdrop-filter: none;
     }
 
     .nav-menu.active {
