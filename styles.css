@@ -1199,6 +1199,7 @@ textarea {
         grid-column: 2;
         align-self: center;
         margin-left: 0.16em;
+        transform: translateY(0.11em);
     }
 
     .terminal-footer {
