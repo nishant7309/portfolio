@@ -97,7 +97,8 @@ components:
     textColor: "{colors.on-dark}"
     typography: "{typography.body-md}"
     rounded: "{rounded.none}"
-    padding: 28px 32px 32px
+    maxWidth: 1280px
+    padding: 24px 40px 30px
   terminal-status-bar:
     backgroundColor: "{colors.surface-dark-elevated}"
     textColor: "{colors.on-dark-mute}"
