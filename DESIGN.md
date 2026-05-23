@@ -191,6 +191,9 @@ No UI state depends on hue. The site uses:
 
 - The terminal must remain readable on mobile; command buttons collapse from four columns to two, then one.
 - The ASCII name can scale down, but it must not overlap or force horizontal page scroll.
+- The mobile header should show the full `nishant@portfolio` brand; the menu label can compact before the brand truncates.
+- The active terminal command and block cursor must stay on the same mobile prompt line.
+- Very narrow phones can reduce terminal ASCII and prompt text before allowing internal clipping.
 - Header commands collapse into the mobile menu before they crowd the status bar.
 - Publications stay directly after the hero on every viewport.
 

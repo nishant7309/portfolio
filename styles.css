@@ -495,6 +495,10 @@ textarea {
     overflow-wrap: anywhere;
 }
 
+.terminal-command {
+    white-space: nowrap;
+}
+
 .prompt-pipe {
     color: var(--accent);
 }
@@ -1102,13 +1106,19 @@ textarea {
     }
 
     .primary-nav {
-        padding: 0 16px;
+        gap: 8px;
+        padding: 0 12px;
+    }
+
+    .nav-brand {
+        gap: 8px;
+        padding-right: 8px;
     }
 
     .brand-name {
-        max-width: 12ch;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        max-width: none;
+        overflow: visible;
+        text-overflow: clip;
     }
 
     .hero {
@@ -1165,8 +1175,21 @@ textarea {
 
     .terminal-prompt {
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: auto auto 1fr;
         gap: 4px;
+    }
+
+    .terminal-prompt .prompt-label {
+        grid-column: 1 / -1;
+    }
+
+    .terminal-prompt .terminal-command {
+        grid-column: 1;
+    }
+
+    .terminal-prompt .terminal-block-cursor {
+        grid-column: 2;
+        margin-left: 0.14em;
     }
 
     .terminal-footer {
@@ -1223,6 +1246,31 @@ textarea {
 
     .footer-links a {
         border-right: none;
+    }
+}
+
+@media (max-width: 360px) {
+    .toggle-label {
+        display: none;
+    }
+
+    .nav-toggle {
+        gap: 0;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .terminal-ascii {
+        font-size: 0.5rem;
+    }
+
+    .terminal-prompt {
+        font-size: 14px;
+    }
+
+    .terminal-row {
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
 
