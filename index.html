@@ -60,12 +60,12 @@
         </button>
 
         <ul class="nav-menu" id="nav-menu">
-            <li><a href="#about" data-cmd="cat">about</a></li>
-            <li><a href="#beyond" data-cmd="ls">beyond</a></li>
-            <li><a href="#experience" data-cmd="cd">work</a></li>
-            <li><a href="#publication" data-cmd="grep">research</a></li>
-            <li><a href="#skills" data-cmd="./">skills</a></li>
-            <li><a href="#contact" data-cmd="ssh">contact</a></li>
+            <li><a href="#about" class="nav-command"><span class="nav-cmd">cat</span><span>about</span></a></li>
+            <li><a href="#beyond" class="nav-command"><span class="nav-cmd">ls</span><span>beyond</span></a></li>
+            <li><a href="#experience" class="nav-command"><span class="nav-cmd">cd</span><span>work</span></a></li>
+            <li><a href="#publication" class="nav-command"><span class="nav-cmd">grep</span><span>research</span></a></li>
+            <li><a href="#skills" class="nav-command"><span class="nav-cmd">./</span><span>skills</span></a></li>
+            <li><a href="#contact" class="nav-command"><span class="nav-cmd">ssh</span><span>contact</span></a></li>
             <li>
                 <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
                     <span class="theme-token">[theme]</span>
@@ -84,15 +84,30 @@
                     <span class="terminal-window">
                         <span class="terminal-light red" aria-hidden="true"></span>
                         <span class="terminal-light amber" aria-hidden="true"></span>
-                        <span class="terminal-light green" aria-hidden="true"></span>
+                        <span class="terminal-light blue" aria-hidden="true"></span>
                         <span>portfolio.tui</span>
                     </span>
                     <span>mode: <strong class="terminal-mode">profile</strong></span>
                 </div>
                 <div class="terminal-title">
                     <p class="terminal-line"><span>nishant@portfolio:~$</span> whoami</p>
-                    <h1><span class="terminal-output-mark">=&gt;</span> Nishant Bhargava<span
-                            class="terminal-cursor" aria-hidden="true">_</span></h1>
+                    <div class="terminal-name-shell">
+                        <span class="terminal-output-mark" aria-hidden="true">=&gt;</span>
+                        <div>
+                            <h1 class="sr-only">Nishant Bhargava</h1>
+                            <pre class="terminal-ascii" aria-hidden="true">--    --  --  -----  --    --   ---   --    --  ------
+---   --  --  --     --    --  -- --  ---   --    --
+-- -- --  --  -----  --------  -----  -- -- --    --
+--   ---  --     --  --    -- --   -- --   ---    --
+--    --  --  -----  --    -- --   -- --    --    --
+
+-----  --    --   ---   -----    -----   ---   --    --   ---
+--  -- --    --  -- --  --  --  --      -- --  --    --  -- --
+-----  --------  -----  -----   -- ---  -----  --    --  -----
+--  -- --    -- --   -- --  --  --  -- --   --  --  --  --   --
+-----  --    -- --   -- --  --   ----- --   --   ----   --   --</pre>
+                        </div>
+                    </div>
                     <p class="terminal-line"><span>nishant@portfolio:~$</span> cat role.txt</p>
                     <p class="terminal-output">LLM Researcher @ CYNICS / Purdue Computer Engineering</p>
                 </div>
@@ -472,21 +487,21 @@
                 <a href="https://scholar.google.com/citations?user=5-y1ytgAAAAJ&hl=en" target="_blank"
                     rel="noopener noreferrer" class="contact-row">
                     <span>[scholar]</span>
-                    <strong>publications</strong>
+                    <strong>Nishant Bhargava</strong>
                 </a>
                 <a href="https://www.linkedin.com/in/nishant-bhargava97/" target="_blank" rel="noopener noreferrer"
                     class="contact-row">
                     <span>[linkedin]</span>
-                    <strong>connect</strong>
+                    <strong>nishant-bhargava97</strong>
                 </a>
                 <a href="https://open.spotify.com/user/2s5lzv9k5h8t26os2fuiznnaj" target="_blank"
                     rel="noopener noreferrer" class="contact-row">
                     <span>[spotify]</span>
-                    <strong>listening log</strong>
+                    <strong>97</strong>
                 </a>
                 <a href="https://boxd.it/3u4ux" target="_blank" rel="noopener noreferrer" class="contact-row">
                     <span>[letterboxd]</span>
-                    <strong>watching log</strong>
+                    <strong>orangejuicecoco</strong>
                 </a>
             </div>
         </section>
