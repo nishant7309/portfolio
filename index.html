@@ -50,8 +50,8 @@
 <body>
     <nav class="primary-nav" aria-label="Primary navigation">
         <a href="#hero" class="nav-brand" aria-label="Nishant Bhargava home">
-            <span class="brand-mark">[NB]</span>
-            <span class="brand-name">Nishant Bhargava</span>
+            <span class="brand-mark">~/nb</span>
+            <span class="brand-name">nishant@portfolio<span class="brand-cursor" aria-hidden="true">_</span></span>
         </a>
 
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
@@ -60,12 +60,12 @@
         </button>
 
         <ul class="nav-menu" id="nav-menu">
-            <li><a href="#about">about</a></li>
-            <li><a href="#beyond">beyond</a></li>
-            <li><a href="#experience">work</a></li>
-            <li><a href="#publication">research</a></li>
-            <li><a href="#skills">skills</a></li>
-            <li><a href="#contact">contact</a></li>
+            <li><a href="#about" data-cmd="cat">about</a></li>
+            <li><a href="#beyond" data-cmd="ls">beyond</a></li>
+            <li><a href="#experience" data-cmd="cd">work</a></li>
+            <li><a href="#publication" data-cmd="grep">research</a></li>
+            <li><a href="#skills" data-cmd="./">skills</a></li>
+            <li><a href="#contact" data-cmd="ssh">contact</a></li>
             <li>
                 <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
                     <span class="theme-token">[theme]</span>
@@ -81,12 +81,20 @@
         <section id="hero" class="hero">
             <div class="hero-terminal" aria-label="Terminal style profile summary">
                 <div class="terminal-head">
-                    <span>portfolio.tui</span>
+                    <span class="terminal-window">
+                        <span class="terminal-light red" aria-hidden="true"></span>
+                        <span class="terminal-light amber" aria-hidden="true"></span>
+                        <span class="terminal-light green" aria-hidden="true"></span>
+                        <span>portfolio.tui</span>
+                    </span>
                     <span>mode: <strong class="terminal-mode">profile</strong></span>
                 </div>
                 <div class="terminal-title">
-                    <h1>Nishant Bhargava</h1>
-                    <p>LLM Researcher @ CYNICS / Purdue Computer Engineering</p>
+                    <p class="terminal-line"><span>nishant@portfolio:~$</span> whoami</p>
+                    <h1><span class="terminal-output-mark">=&gt;</span> Nishant Bhargava<span
+                            class="terminal-cursor" aria-hidden="true">_</span></h1>
+                    <p class="terminal-line"><span>nishant@portfolio:~$</span> cat role.txt</p>
+                    <p class="terminal-output">LLM Researcher @ CYNICS / Purdue Computer Engineering</p>
                 </div>
                 <div class="terminal-tabs" role="tablist" aria-label="Terminal views">
                     <button type="button" class="terminal-tab active" data-terminal-tab="profile" role="tab"
