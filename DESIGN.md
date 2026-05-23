@@ -23,16 +23,16 @@ colors:
   hairline-strong: "#646262"
   on-dark: "#fdfcfc"
   on-dark-mute: "#9a9898"
-  accent: "#007aff"
-  accent-hover: "#0056b3"
-  accent-active: "#004085"
-  warning: "#ff9f0a"
-  warning-hover: "#cc7f08"
-  warning-active: "#995f06"
-  danger: "#ff3b30"
-  danger-hover: "#d70015"
-  danger-active: "#a50011"
-  success: "#30d158"
+  accent: "#201d1d"
+  accent-hover: "#0f0000"
+  accent-active: "#000000"
+  warning: "#646262"
+  warning-hover: "#424245"
+  warning-active: "#201d1d"
+  danger: "#201d1d"
+  danger-hover: "#0f0000"
+  danger-active: "#000000"
+  success: "#201d1d"
 
 typography:
   display-xl:
@@ -226,7 +226,7 @@ OpenCode's marketing site is rendered entirely in Berkeley Mono — every word o
 
 The chrome is austere: warm cream canvas (`{colors.canvas}` — `#fdfcfc` with a faint blush), nearly-black ink (`{colors.ink}` — `#201d1d`), and a 4-tier neutral gray ladder for body, metadata, and disabled text. Cards don't exist as raised surfaces — sections are just hairline-bordered text blocks (`{colors.hairline}` 1px) sitting directly on the canvas with `{spacing.section}` (96px) air between them. The single "visual" moment in the entire system is a full-bleed dark hero card (`{colors.surface-dark}` — true near-black) that mocks up the OpenCode TUI itself: a terminal frame with `tab` / `ctrl-p` keybinding hints, a "Build" command line, and the OpenCode wordmark rendered as a pixel-block ASCII title.
 
-The semantic palette is unusual for a brand-marketing site: it ships the full Apple Human Interface Guidelines accent ramp — `{colors.accent}` (Apple Blue `#007aff`), `{colors.danger}` (`#ff3b30`), `{colors.warning}` (`#ff9f0a`), `{colors.success}` (`#30d158`) plus their hover/active deepenings — even though the marketing surfaces themselves only use these colors in the dark hero TUI mockup as syntax-highlight stand-ins. The wider palette belongs to the in-product TUI; the marketing pages mostly stay in monochrome.
+The semantic palette is intentionally monochrome: `{colors.accent}`, `{colors.danger}`, `{colors.warning}`, and `{colors.success}` all resolve to black, white, or neutral gray tokens. Marketing surfaces and the hero TUI do not use blue, green, orange, or red syntax stand-ins.
 
 **Key Characteristics:**
 - 100% Berkeley Mono typography across every text role — no sans-serif fallback anywhere in the chrome
@@ -264,18 +264,18 @@ The semantic palette is unusual for a brand-marketing site: it ships the full Ap
 - **Ash** (`{colors.ash}` — `#9a9898`): disabled text and secondary annotation in dark TUI mockup, also TUI mockup secondary color.
 
 ### Semantic
-The full Apple Human Interface Guidelines semantic ramp ships with the system. On marketing pages these colors appear primarily inside the hero TUI mockup as syntax-highlight stand-ins; in the in-product TUI they carry their conventional meaning.
+Semantic states use contrast, text, and monochrome value changes rather than colored syntax highlighting.
 
-- **Accent** (`{colors.accent}` — `#007aff`): primary informational signal, in-product link color, TUI command highlight.
-- **Accent Hover** (`{colors.accent-hover}` — `#0056b3`): pressed informational link.
-- **Accent Active** (`{colors.accent-active}` — `#004085`): deeply-pressed informational state.
-- **Danger** (`{colors.danger}` — `#ff3b30`): destructive confirmation, error state.
-- **Danger Hover** (`{colors.danger-hover}` — `#d70015`): pressed destructive.
-- **Danger Active** (`{colors.danger-active}` — `#a50011`): deeply-pressed destructive.
-- **Warning** (`{colors.warning}` — `#ff9f0a`): caution callouts.
-- **Warning Hover** (`{colors.warning-hover}` — `#cc7f08`): pressed caution.
-- **Warning Active** (`{colors.warning-active}` — `#995f06`): deeply-pressed caution.
-- **Success** (`{colors.success}` — `#30d158`): positive confirmation, in-TUI success indicator.
+- **Accent** (`{colors.accent}` — `#201d1d`): primary informational signal, link color, and TUI command highlight on light surfaces.
+- **Accent Hover** (`{colors.accent-hover}` — `#0f0000`): pressed informational link.
+- **Accent Active** (`{colors.accent-active}` — `#000000`): deeply-pressed informational state.
+- **Danger** (`{colors.danger}` — `#201d1d`): destructive confirmation or error text using monochrome emphasis.
+- **Danger Hover** (`{colors.danger-hover}` — `#0f0000`): pressed destructive.
+- **Danger Active** (`{colors.danger-active}` — `#000000`): deeply-pressed destructive.
+- **Warning** (`{colors.warning}` — `#646262`): caution callouts using neutral gray.
+- **Warning Hover** (`{colors.warning-hover}` — `#424245`): pressed caution.
+- **Warning Active** (`{colors.warning-active}` — `#201d1d`): deeply-pressed caution.
+- **Success** (`{colors.success}` — `#201d1d`): positive confirmation using monochrome emphasis.
 
 ## Typography
 

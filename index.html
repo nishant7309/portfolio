@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -30,11 +30,10 @@
     <link rel="stylesheet" href="styles.css">
     <script>
         try {
-            if (localStorage.getItem("theme") === "dark") {
-                document.documentElement.dataset.theme = "dark";
-            }
+            const savedTheme = localStorage.getItem("theme");
+            document.documentElement.dataset.theme = savedTheme === "light" ? "light" : "dark";
         } catch (error) {
-            document.documentElement.removeAttribute("data-theme");
+            document.documentElement.dataset.theme = "dark";
         }
     </script>
 
@@ -67,9 +66,9 @@
             <li><a href="#skills" class="nav-command"><span class="nav-cmd">./</span><span>skills</span></a></li>
             <li><a href="#contact" class="nav-command"><span class="nav-cmd">ssh</span><span>contact</span></a></li>
             <li>
-                <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+                <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="true">
                     <span class="theme-token">[theme]</span>
-                    <span class="theme-state">light</span>
+                    <span class="theme-state">dark</span>
                 </button>
             </li>
             <li><a href="Nishant_Bhargava_resume.pdf" target="_blank" rel="noopener noreferrer"
@@ -82,9 +81,9 @@
             <div class="hero-terminal" aria-label="Terminal style profile summary">
                 <div class="terminal-head">
                     <span class="terminal-window">
-                        <span class="terminal-light red" aria-hidden="true"></span>
-                        <span class="terminal-light amber" aria-hidden="true"></span>
-                        <span class="terminal-light blue" aria-hidden="true"></span>
+                        <span class="terminal-light dark" aria-hidden="true"></span>
+                        <span class="terminal-light mid" aria-hidden="true"></span>
+                        <span class="terminal-light bright" aria-hidden="true"></span>
                         <span>portfolio.tui</span>
                     </span>
                     <span>mode: <strong class="terminal-mode">profile</strong></span>

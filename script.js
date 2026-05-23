@@ -39,14 +39,14 @@ function initThemeToggle() {
         state.textContent = isDark ? "dark" : "light";
     };
 
-    let savedTheme = "light";
+    let savedTheme = "dark";
     try {
-        savedTheme = localStorage.getItem("theme") || "light";
+        savedTheme = localStorage.getItem("theme") || "dark";
     } catch (error) {
-        savedTheme = "light";
+        savedTheme = "dark";
     }
 
-    applyTheme(savedTheme === "dark" ? "dark" : "light");
+    applyTheme(savedTheme === "light" ? "light" : "dark");
 
     toggle.addEventListener("click", () => {
         const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
