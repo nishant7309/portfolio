@@ -449,11 +449,13 @@ textarea {
 
 .terminal-block-cursor {
     display: inline-block;
-    width: 0.68em;
-    height: 1.04em;
-    margin-left: 0.32em;
+    flex: 0 0 auto;
+    align-self: center;
+    width: 0.62em;
+    height: 0.95em;
+    margin-left: 0.22em;
     background: var(--cursor-bg);
-    vertical-align: -0.14em;
+    vertical-align: middle;
     animation: terminal-caret 1060ms steps(1, end) infinite;
 }
 
@@ -490,13 +492,17 @@ textarea {
 
 .terminal-prompt {
     display: flex;
-    gap: 10px;
-    align-items: flex-start;
+    gap: 0;
+    align-items: center;
     overflow-wrap: anywhere;
 }
 
 .terminal-command {
     white-space: nowrap;
+}
+
+.terminal-prompt .prompt-label {
+    margin-right: 10px;
 }
 
 .prompt-pipe {
@@ -1176,11 +1182,13 @@ textarea {
     .terminal-prompt {
         display: grid;
         grid-template-columns: auto auto 1fr;
-        gap: 4px;
+        column-gap: 0;
+        row-gap: 4px;
     }
 
     .terminal-prompt .prompt-label {
         grid-column: 1 / -1;
+        margin-right: 0;
     }
 
     .terminal-prompt .terminal-command {
@@ -1189,7 +1197,8 @@ textarea {
 
     .terminal-prompt .terminal-block-cursor {
         grid-column: 2;
-        margin-left: 0.14em;
+        align-self: center;
+        margin-left: 0.16em;
     }
 
     .terminal-footer {
