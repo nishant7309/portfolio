@@ -44,9 +44,9 @@
     --mute: #9f9f9f;
     --stone: #858585;
     --ash: #707070;
-    --canvas: #050505;
-    --surface-soft: #101010;
-    --surface-card: #151515;
+    --canvas: #000000;
+    --surface-soft: #080808;
+    --surface-card: #0d0d0d;
     --surface-dark: #000000;
     --surface-dark-elevated: #101010;
     --hairline: rgba(255, 255, 255, 0.13);
@@ -222,8 +222,9 @@ textarea {
     background: var(--ink);
     border: 1px solid var(--ink);
     border-radius: var(--radius-sm);
-    padding: 4px 16px;
-    line-height: 2;
+    min-height: 32px;
+    padding: 4px 14px;
+    line-height: 1.45;
 }
 
 .nav-menu .nav-action:hover {
@@ -307,9 +308,7 @@ textarea {
     margin: 0 auto;
     padding: 32px;
     border: 1px solid var(--hairline);
-    box-shadow:
-        inset 0 1px 0 color-mix(in srgb, var(--ink) 8%, transparent),
-        inset 0 -1px 0 color-mix(in srgb, var(--canvas) 70%, transparent);
+    box-shadow: none;
     overflow: hidden;
 }
 

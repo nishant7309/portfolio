@@ -147,9 +147,11 @@ function initActiveNav() {
     if (!sections.length || !navLinks.length) return;
 
     const setActiveLink = () => {
-        const current = sections
-            .filter((section) => window.scrollY >= section.offsetTop - 140)
-            .at(-1);
+        const nearBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+        const activationLine = Math.min(window.innerHeight * 0.45, 360);
+        const current = nearBottom
+            ? sections.at(-1)
+            : sections.filter((section) => section.getBoundingClientRect().top <= activationLine).at(-1) || sections[0];
 
         navLinks.forEach((link) => {
             link.classList.toggle("active", current && link.getAttribute("href") === `#${current.id}`);
