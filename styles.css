@@ -203,20 +203,14 @@ textarea {
 .hero {
     width: 100%;
     min-height: 520px;
-    display: grid;
-    grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
-    gap: 48px;
+    display: flex;
     align-items: center;
     padding: 48px max(24px, calc((100vw - 1120px) / 2)) 64px;
 }
 
-.hero-copy {
-    max-width: 560px;
-}
-
 .section-kicker,
 .muted,
-.terminal-note,
+.terminal-footer,
 .tag-line,
 .fact-label {
     color: var(--mute);
@@ -225,39 +219,6 @@ textarea {
 .section-kicker {
     margin: 0 0 16px;
     font-weight: 700;
-}
-
-.hero h1 {
-    margin: 0;
-    font-size: clamp(2.15rem, 4vw, 3.05rem);
-    line-height: 1.5;
-    font-weight: 700;
-}
-
-.hero-role {
-    min-height: 32px;
-    margin: 8px 0 24px;
-    color: var(--charcoal);
-    font-weight: 500;
-}
-
-.typing-text::after {
-    content: "_";
-    display: inline-block;
-    margin-left: 2px;
-    animation: cursor-blink 1s steps(2, start) infinite;
-}
-
-.hero-summary {
-    max-width: 560px;
-    margin: 0 0 32px;
-    color: var(--body);
-}
-
-.hero-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
 }
 
 .button {
@@ -295,7 +256,9 @@ textarea {
 .hero-terminal {
     color: var(--terminal-fg);
     background: var(--terminal-bg);
-    padding: 28px 32px;
+    width: min(100%, 1120px);
+    margin: 0 auto;
+    padding: 32px;
     overflow: hidden;
 }
 
@@ -308,7 +271,7 @@ textarea {
 }
 
 .terminal-head {
-    margin-bottom: 20px;
+    margin-bottom: 32px;
     color: var(--terminal-muted);
     font-size: 14px;
     line-height: 2;
@@ -317,6 +280,30 @@ textarea {
 .terminal-head strong {
     color: var(--terminal-fg);
     font-weight: 500;
+}
+
+.terminal-title {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 32px;
+    align-items: end;
+    margin-bottom: 28px;
+    border-bottom: 1px solid color-mix(in srgb, var(--terminal-muted) 42%, transparent);
+    padding-bottom: 20px;
+}
+
+.terminal-title h1 {
+    margin: 0;
+    font-size: clamp(2.25rem, 6vw, 4.7rem);
+    line-height: 1;
+    font-weight: 700;
+}
+
+.terminal-title p {
+    max-width: 36ch;
+    margin: 0;
+    color: var(--terminal-muted);
+    text-align: right;
 }
 
 .terminal-tabs {
@@ -360,12 +347,12 @@ textarea {
 
 .terminal-panels {
     display: grid;
-    margin: 20px 0 24px;
+    margin: 20px 0 28px;
 }
 
 .terminal-panel {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 8px 24px;
 }
 
@@ -382,10 +369,19 @@ textarea {
     color: var(--success);
 }
 
-.terminal-note {
+.terminal-footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
     margin: 0;
     font-size: 14px;
     line-height: 2;
+}
+
+.terminal-footer a {
+    color: var(--terminal-fg);
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
 .section {
@@ -464,8 +460,10 @@ textarea {
     display: grid;
     grid-template-columns: 80px 1fr;
     gap: 16px;
+    min-height: 150px;
     padding: 16px 0;
     border-top: 1px solid var(--hairline);
+    align-items: start;
     transition: background var(--transition), padding var(--transition);
 }
 
@@ -752,16 +750,6 @@ textarea {
         margin-top: 12px;
     }
 
-    .hero {
-        grid-template-columns: 1fr;
-        gap: 32px;
-        padding-top: 48px;
-    }
-
-    .hero-copy {
-        max-width: 720px;
-    }
-
     .two-column,
     .media-columns,
     .skill-columns,
@@ -790,12 +778,7 @@ textarea {
     }
 
     .hero {
-        gap: 20px;
         padding: 28px 16px;
-    }
-
-    .hero h1 {
-        font-size: 2rem;
     }
 
     .button {
@@ -805,6 +788,23 @@ textarea {
 
     .hero-terminal {
         padding: 20px 16px;
+    }
+
+    .terminal-title {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        align-items: start;
+        margin-bottom: 20px;
+        padding-bottom: 16px;
+    }
+
+    .terminal-title h1 {
+        font-size: clamp(2.15rem, 12vw, 3.5rem);
+    }
+
+    .terminal-title p {
+        max-width: none;
+        text-align: left;
     }
 
     .terminal-panels {
@@ -842,6 +842,7 @@ textarea {
 
     .media-row {
         grid-template-columns: 64px 1fr;
+        min-height: 128px;
     }
 
     .cover-img {

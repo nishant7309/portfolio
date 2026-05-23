@@ -79,26 +79,14 @@
 
     <main>
         <section id="hero" class="hero">
-            <div class="hero-copy">
-                <p class="section-kicker">[research dossier]</p>
-                <h1>Nishant Bhargava</h1>
-                <p class="hero-role" aria-live="polite"><span class="typing-text">LLM Researcher @ CYNICS</span></p>
-                <p class="hero-summary">
-                    Undergraduate researcher at Purdue studying LLM evaluation awareness, linguistic steganography,
-                    computer vision, and long-term LLM memory writing. Published at NeurIPS 2025 and EMNLP 2025.
-                </p>
-                <div class="hero-actions" aria-label="Primary actions">
-                    <a href="#experience" class="button button-primary">view work</a>
-                    <a href="mailto:bharga57@purdue.edu" class="button button-secondary">email</a>
-                    <a href="Nishant_Bhargava_resume.pdf" target="_blank" rel="noopener noreferrer"
-                        class="button button-secondary">resume</a>
-                </div>
-            </div>
-
             <div class="hero-terminal" aria-label="Terminal style profile summary">
                 <div class="terminal-head">
                     <span>portfolio.tui</span>
                     <span>mode: <strong class="terminal-mode">profile</strong></span>
+                </div>
+                <div class="terminal-title">
+                    <h1>Nishant Bhargava</h1>
+                    <p>LLM Researcher @ CYNICS / Purdue Computer Engineering</p>
                 </div>
                 <div class="terminal-tabs" role="tablist" aria-label="Terminal views">
                     <button type="button" class="terminal-tab active" data-terminal-tab="profile" role="tab"
@@ -118,6 +106,8 @@
                         <p><span>[+]</span> next: ESRT AI Intern</p>
                         <p><span>[+]</span> degree: Purdue CpE</p>
                         <p><span>[+]</span> focus: safety / stego / CV</p>
+                        <p><span>[+]</span> papers: PRE / MEMAUDIT</p>
+                        <p><span>[+]</span> systems: Modal / vLLM / AWS</p>
                     </div>
                     <div class="terminal-panel" data-terminal-panel="research" role="tabpanel" hidden>
                         <p><span>[+]</span> PRE: Algoverse / NeurIPS + EMNLP</p>
@@ -132,7 +122,12 @@
                         <p><span>[+]</span> loop: test / debug / document / ship</p>
                     </div>
                 </div>
-                <p class="terminal-note">click tabs: switch output  ctrl-p: contact  esc: keep reading</p>
+                <div class="terminal-footer">
+                    <span>click tabs: switch output</span>
+                    <a href="#experience">work</a>
+                    <a href="#publication">papers</a>
+                    <a href="mailto:bharga57@purdue.edu">contact</a>
+                </div>
             </div>
         </section>
 
@@ -270,7 +265,6 @@
                         <div>
                             <h4>Everything by Andrei Tarkovsky</h4>
                             <p class="muted">Stalker / Mirror / Solaris / Nostalgia</p>
-                            <p>Dreams, memory, and long takes that feel like research notes.</p>
                         </div>
                     </article>
                     <article class="media-row">
@@ -397,7 +391,7 @@
                     <span class="venue">May 2026</span>
                 </div>
                 <h3>MEMAUDIT: An Exact Package-Oracle Evaluation Protocol for Budgeted Long-Term LLM Memory Writing</h3>
-                <p class="muted">Nishant Bhargava, Rodrigo Sobral Barrento</p>
+                <p class="muted">N. Bhargava and R. S. Barrento</p>
                 <p>
                     An evaluation protocol for long-term LLM memory writers that scores what a system preserves before
                     retrieval and reader reasoning intervene. MEMAUDIT frames memory selection as a finite,
@@ -414,7 +408,7 @@
                     <span class="venue">EMNLP 2025</span>
                 </div>
                 <h3>Probe-Rewrite-Evaluate: Quantifying Evaluation Awareness in Large Language Models</h3>
-                <p class="muted">Bhargava, N., et al.</p>
+                <p class="muted">N. Bhargava et al.</p>
                 <p>
                     A methodology for understanding how LLMs alter behavior when they detect evaluation contexts. The
                     work introduces Awareness Elasticity and provides a framework for measuring benchmark-deployment
