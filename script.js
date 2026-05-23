@@ -20,7 +20,9 @@ function initMobileNav() {
     });
 
     menu.addEventListener("click", (event) => {
-        if (!(event.target instanceof HTMLAnchorElement)) return;
+        if (!(event.target instanceof Element)) return;
+        const link = event.target.closest("a");
+        if (!link) return;
         menu.classList.remove("active");
         toggle.setAttribute("aria-expanded", "false");
         toggle.querySelector(".toggle-glyph").textContent = "[+]";
@@ -30,6 +32,7 @@ function initMobileNav() {
 function initThemeToggle() {
     const toggle = document.querySelector(".theme-toggle");
     const state = document.querySelector(".theme-state");
+    const terminalTheme = document.querySelector(".terminal-theme");
     if (!toggle || !state) return;
 
     const applyTheme = (theme) => {
@@ -37,6 +40,7 @@ function initThemeToggle() {
         document.documentElement.dataset.theme = isDark ? "dark" : "light";
         toggle.setAttribute("aria-pressed", String(isDark));
         state.textContent = isDark ? "dark" : "light";
+        if (terminalTheme) terminalTheme.textContent = isDark ? "dark" : "light";
     };
 
     let savedTheme = "dark";
@@ -63,14 +67,39 @@ function initTerminalTabs() {
     const tabs = [...document.querySelectorAll("[data-terminal-tab]")];
     const panels = [...document.querySelectorAll("[data-terminal-panel]")];
     const command = document.querySelector(".terminal-command");
+    const prompt = document.querySelector(".terminal-prompt");
+    const response = document.querySelector(".terminal-response");
     const mode = document.querySelector(".terminal-mode");
 
     if (!tabs.length || !panels.length || !command || !mode) return;
 
-    const commands = {
-        profile: "run profile --focus safety",
-        research: "run papers --source algoverse,arxiv",
-        stack: "run stack --ship applied-ai"
+    const terminalCopy = {
+        profile: {
+            command: "run profile --focus safety",
+            response: "profile loaded: research, systems, papers"
+        },
+        research: {
+            command: "ls papers --sort signal",
+            response: "2 papers found: MEMAUDIT, Probe-Rewrite-Evaluate"
+        },
+        stack: {
+            command: "cat stack.txt",
+            response: "stack loaded: PyTorch, vLLM, Modal, AWS, OpenCV"
+        }
+    };
+
+    const replay = (element, className) => {
+        if (!element) return;
+        element.classList.remove(className);
+        void element.offsetWidth;
+        element.classList.add(className);
+    };
+
+    const writeCommand = (nextCommand, nextResponse) => {
+        command.textContent = nextCommand;
+        if (response) response.textContent = nextResponse;
+        replay(prompt, "terminal-pulse");
+        replay(response, "is-updated");
     };
 
     const setActiveTab = (name) => {
@@ -84,14 +113,22 @@ function initTerminalTabs() {
             const active = panel.dataset.terminalPanel === name;
             panel.classList.toggle("active", active);
             panel.hidden = !active;
+            if (active) replay(panel, "is-switching");
         });
 
-        command.textContent = commands[name] || commands.profile;
+        const copy = terminalCopy[name] || terminalCopy.profile;
+        writeCommand(copy.command, copy.response);
         mode.textContent = name;
     };
 
     tabs.forEach((tab) => {
         tab.addEventListener("click", () => setActiveTab(tab.dataset.terminalTab));
+    });
+
+    document.querySelectorAll("[data-terminal-command]").forEach((link) => {
+        link.addEventListener("click", () => {
+            writeCommand(link.dataset.terminalCommand, link.dataset.terminalResponse || "command accepted");
+        });
     });
 }
 

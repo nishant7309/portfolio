@@ -59,10 +59,10 @@
         </button>
 
         <ul class="nav-menu" id="nav-menu">
-            <li><a href="#about" class="nav-command"><span class="nav-cmd">cat</span><span>about</span></a></li>
+            <li><a href="#publication" class="nav-command"><span class="nav-cmd">ls</span><span>papers</span></a></li>
+            <li><a href="#about" class="nav-command"><span class="nav-cmd">cat</span><span>about.md</span></a></li>
             <li><a href="#beyond" class="nav-command"><span class="nav-cmd">ls</span><span>beyond</span></a></li>
             <li><a href="#experience" class="nav-command"><span class="nav-cmd">cd</span><span>work</span></a></li>
-            <li><a href="#publication" class="nav-command"><span class="nav-cmd">grep</span><span>research</span></a></li>
             <li><a href="#skills" class="nav-command"><span class="nav-cmd">./</span><span>skills</span></a></li>
             <li><a href="#contact" class="nav-command"><span class="nav-cmd">ssh</span><span>contact</span></a></li>
             <li>
@@ -72,7 +72,7 @@
                 </button>
             </li>
             <li><a href="Nishant_Bhargava_resume.pdf" target="_blank" rel="noopener noreferrer"
-                    class="nav-action">resume</a></li>
+                    class="nav-action"><span class="nav-cmd">open</span><span>resume.pdf</span></a></li>
         </ul>
     </nav>
 
@@ -84,31 +84,33 @@
                         <span class="terminal-light dark" aria-hidden="true"></span>
                         <span class="terminal-light mid" aria-hidden="true"></span>
                         <span class="terminal-light bright" aria-hidden="true"></span>
-                        <span>portfolio.tui</span>
+                        <span class="terminal-path">nishant@portfolio:~/profile</span>
                     </span>
-                    <span>mode: <strong class="terminal-mode">profile</strong></span>
+                    <span class="terminal-status">
+                        <span>branch:<strong>main</strong></span>
+                        <span>mode:<strong class="terminal-mode">profile</strong></span>
+                        <span>theme:<strong class="terminal-theme">dark</strong></span>
+                    </span>
                 </div>
                 <div class="terminal-title">
-                    <p class="terminal-line"><span>nishant@portfolio:~$</span> whoami</p>
+                    <p class="terminal-line"><span class="prompt-label">nishant@portfolio:~$</span> figlet "Nishant Bhargava"</p>
                     <div class="terminal-name-shell">
-                        <span class="terminal-output-mark" aria-hidden="true">=&gt;</span>
                         <div>
                             <h1 class="sr-only">Nishant Bhargava</h1>
-                            <pre class="terminal-ascii" aria-hidden="true">  _   _ ___ ____  _   _    _    _   _ _____
- | \ | |_ _/ ___|| | | |  / \  | \ | |_   _|
- |  \| || |\___ \| |_| | / _ \ |  \| | | |
- | |\  || | ___) |  _  |/ ___ \| |\  | | |
- |_| \_|___|____/|_| |_/_/   \_\_| \_| |_|
-
-  ____  _   _    _    ____   ____    ___     ___
- | __ )| | | |  / \  |  _ \ / ___|  / \ \   / / \
- |  _ \| |_| | / _ \ | |_) | |  _  / _ \ \ / / _ \
- | |_) |  _  |/ ___ \|  _ <| |_| |/ ___ \ V / ___ \
- |____/|_| |_/_/   \_\_| \_\\____/_/   \_\_/_/   \_\</pre>
+                            <pre class="terminal-ascii" aria-hidden="true"><span class="terminal-ascii-line" style="--line: 0"> _   _ ___ ____  _   _    _    _   _ _____</span>
+<span class="terminal-ascii-line" style="--line: 1">| \ | |_ _/ ___|| | | |  / \  | \ | |_   _|</span>
+<span class="terminal-ascii-line" style="--line: 2">|  \| || |\___ \| |_| | / _ \ |  \| | | |</span>
+<span class="terminal-ascii-line" style="--line: 3">| |\  || | ___) |  _  |/ ___ \| |\  | | |</span>
+<span class="terminal-ascii-line" style="--line: 4">|_| \_|___|____/|_| |_/_/   \_\_| \_| |_|</span>
+<span class="terminal-ascii-line" style="--line: 5"> </span>
+<span class="terminal-ascii-line" style="--line: 6"> ____  _   _    _    ____   ____    ___     ___</span>
+<span class="terminal-ascii-line" style="--line: 7">| __ )| | | |  / \  |  _ \ / ___|  / \ \   / / \</span>
+<span class="terminal-ascii-line" style="--line: 8">|  _ \| |_| | / _ \ | |_) | |  _  / _ \ \ / / _ \</span>
+<span class="terminal-ascii-line" style="--line: 9">| |_) |  _  |/ ___ \|  _ &lt;| |_| |/ ___ \ V / ___ \</span>
+<span class="terminal-ascii-line" style="--line: 10">|____/|_| |_/_/   \_\_| \_\\____/_/   \_\_/_/   \_\</span></pre>
                         </div>
                     </div>
-                    <p class="terminal-line"><span>nishant@portfolio:~$</span> cat role.txt<span
-                            class="terminal-block-cursor" aria-hidden="true"></span></p>
+                    <p class="terminal-line"><span class="prompt-label">nishant@portfolio:~$</span> cat role.txt</p>
                     <p class="terminal-output">LLM Researcher @ CYNICS / Purdue Computer Engineering</p>
                 </div>
                 <div class="terminal-tabs" role="tablist" aria-label="Terminal views">
@@ -119,34 +121,47 @@
                     <button type="button" class="terminal-tab" data-terminal-tab="stack" role="tab"
                         aria-selected="false">[stack]</button>
                 </div>
-                <div class="terminal-row terminal-prompt">
-                    <span class="prompt-pipe">|</span>
-                    <span class="terminal-command">run profile --focus safety</span>
+                <div class="terminal-row terminal-prompt" aria-live="polite">
+                    <span class="prompt-label">nishant@portfolio:~$</span>
+                    <span class="terminal-command">run profile --focus safety</span><span
+                        class="terminal-block-cursor" aria-hidden="true"></span>
                 </div>
+                <p class="terminal-response">profile loaded: research, systems, papers</p>
                 <div class="terminal-panels">
                     <div class="terminal-panel active" data-terminal-panel="profile" role="tabpanel">
-                        <p><span>[+]</span> now: CYNICS @ Purdue</p>
-                        <p><span>[+]</span> next: ESRT AI Intern</p>
-                        <p><span>[+]</span> degree: Purdue CpE</p>
-                        <p><span>[+]</span> focus: safety / stego / CV</p>
-                        <p><span>[+]</span> papers: PRE / MEMAUDIT</p>
-                        <p><span>[+]</span> systems: Modal / vLLM / AWS</p>
+                        <p><span>[01]</span> now: CYNICS @ Purdue</p>
+                        <p><span>[02]</span> next: ESRT AI Intern</p>
+                        <p><span>[03]</span> degree: Purdue CpE</p>
+                        <p><span>[04]</span> focus: safety / stego / CV</p>
+                        <p><span>[05]</span> papers: PRE / MEMAUDIT</p>
+                        <p><span>[06]</span> systems: Modal / vLLM / AWS</p>
                     </div>
                     <div class="terminal-panel" data-terminal-panel="research" role="tabpanel" hidden>
-                        <p><span>[+]</span> PRE: Algoverse / NeurIPS + EMNLP</p>
-                        <p><span>[+]</span> MEMAUDIT: arXiv 2605.02199</p>
-                        <p><span>[+]</span> metric: Awareness Elasticity</p>
-                        <p><span>[+]</span> protocol: package-oracle memory</p>
+                        <p><span>[01]</span> PRE: Algoverse / NeurIPS + EMNLP</p>
+                        <p><span>[02]</span> MEMAUDIT: arXiv 2605.02199</p>
+                        <p><span>[03]</span> metric: Awareness Elasticity</p>
+                        <p><span>[04]</span> protocol: package-oracle memory</p>
                     </div>
                     <div class="terminal-panel" data-terminal-panel="stack" role="tabpanel" hidden>
-                        <p><span>[+]</span> llm: PyTorch / HF / PEFT / vLLM</p>
-                        <p><span>[+]</span> systems: Modal / Docker / AWS / Linux</p>
-                        <p><span>[+]</span> vision: YOLOv5 / OpenCV / maritime data</p>
-                        <p><span>[+]</span> loop: test / debug / document / ship</p>
+                        <p><span>[01]</span> llm: PyTorch / HF / PEFT / vLLM</p>
+                        <p><span>[02]</span> systems: Modal / Docker / AWS / Linux</p>
+                        <p><span>[03]</span> vision: YOLOv5 / OpenCV / maritime data</p>
+                        <p><span>[04]</span> loop: test / debug / document / ship</p>
                     </div>
                 </div>
+                <div class="terminal-command-links" aria-label="Terminal quick commands">
+                    <a href="#publication" data-terminal-command="ls papers"
+                        data-terminal-response="2 papers found: MEMAUDIT, PRE">ls papers</a>
+                    <a href="#experience" data-terminal-command="cd work && ls"
+                        data-terminal-response="4 entries: ESRT, CYNICS, Algoverse, RoBoat">cd work</a>
+                    <a href="Nishant_Bhargava_resume.pdf" target="_blank" rel="noopener noreferrer"
+                        data-terminal-command="open resume.pdf"
+                        data-terminal-response="opening Nishant_Bhargava_resume.pdf">open resume.pdf</a>
+                    <a href="mailto:bharga57@purdue.edu" data-terminal-command="mail bharga57@purdue.edu"
+                        data-terminal-response="drafting message to bharga57@purdue.edu">mail</a>
+                </div>
                 <div class="terminal-footer">
-                    <span>click tabs: switch output</span>
+                    <span>tabs and commands update output</span>
                     <a href="#experience">work</a>
                     <a href="#publication">papers</a>
                     <a href="mailto:bharga57@purdue.edu">contact</a>
@@ -154,9 +169,49 @@
             </div>
         </section>
 
+        <section id="publication" class="section publication">
+            <div class="section-heading">
+                <p class="section-kicker">[01] research</p>
+                <h2>publications</h2>
+            </div>
+
+            <article class="publication-panel publication-panel-featured">
+                <div class="publication-meta">
+                    <span class="venue">arXiv 2605.02199</span>
+                    <span class="venue">May 2026</span>
+                </div>
+                <h3>MEMAUDIT: An Exact Package-Oracle Evaluation Protocol for Budgeted Long-Term LLM Memory Writing</h3>
+                <p class="muted">N. Bhargava and R. S. Barrento</p>
+                <p>
+                    An evaluation protocol for long-term LLM memory writers that scores what a system preserves before
+                    retrieval and reader reasoning intervene. MEMAUDIT frames memory selection as a finite,
+                    budget-constrained semantic optimization problem with exact package optima and external-system
+                    scorers.
+                </p>
+                <a href="https://arxiv.org/pdf/2605.02199" target="_blank" rel="noopener noreferrer"
+                    class="inline-link">arXiv:2605.02199 PDF</a>
+            </article>
+
+            <article class="publication-panel">
+                <div class="publication-meta">
+                    <span class="venue">NeurIPS 2025</span>
+                    <span class="venue">EMNLP 2025</span>
+                </div>
+                <h3>Probe-Rewrite-Evaluate: Quantifying Evaluation Awareness in Large Language Models</h3>
+                <p class="muted">N. Bhargava et al.</p>
+                <p>
+                    A methodology for understanding how LLMs alter behavior when they detect evaluation contexts. The
+                    work introduces Awareness Elasticity and provides a framework for measuring benchmark-deployment
+                    performance gaps.
+                </p>
+                <a href="https://arxiv.org/abs/2509.00591" target="_blank" rel="noopener noreferrer"
+                    class="inline-link">arXiv:2509.00591</a>
+            </article>
+        </section>
+
         <section id="about" class="section about">
             <div class="section-heading">
-                <p class="section-kicker">[01] about</p>
+                <p class="section-kicker">[02] about</p>
                 <h2>why this work</h2>
             </div>
 
@@ -206,7 +261,7 @@
 
         <section id="beyond" class="section beyond">
             <div class="section-heading">
-                <p class="section-kicker">[02] beyond</p>
+                <p class="section-kicker">[03] beyond</p>
                 <h2>books, movies, shows</h2>
             </div>
 
@@ -304,7 +359,7 @@
 
         <section id="experience" class="section experience">
             <div class="section-heading">
-                <p class="section-kicker">[03] work</p>
+                <p class="section-kicker">[04] work</p>
                 <h2>research and engineering</h2>
             </div>
 
@@ -402,46 +457,6 @@
             </div>
         </section>
 
-        <section id="publication" class="section publication">
-            <div class="section-heading">
-                <p class="section-kicker">[04] research</p>
-                <h2>publications</h2>
-            </div>
-
-            <article class="publication-panel">
-                <div class="publication-meta">
-                    <span class="venue">arXiv 2605.02199</span>
-                    <span class="venue">May 2026</span>
-                </div>
-                <h3>MEMAUDIT: An Exact Package-Oracle Evaluation Protocol for Budgeted Long-Term LLM Memory Writing</h3>
-                <p class="muted">N. Bhargava and R. S. Barrento</p>
-                <p>
-                    An evaluation protocol for long-term LLM memory writers that scores what a system preserves before
-                    retrieval and reader reasoning intervene. MEMAUDIT frames memory selection as a finite,
-                    budget-constrained semantic optimization problem with exact package optima and external-system
-                    scorers.
-                </p>
-                <a href="https://arxiv.org/pdf/2605.02199" target="_blank" rel="noopener noreferrer"
-                    class="inline-link">arXiv:2605.02199 PDF</a>
-            </article>
-
-            <article class="publication-panel">
-                <div class="publication-meta">
-                    <span class="venue">NeurIPS 2025</span>
-                    <span class="venue">EMNLP 2025</span>
-                </div>
-                <h3>Probe-Rewrite-Evaluate: Quantifying Evaluation Awareness in Large Language Models</h3>
-                <p class="muted">N. Bhargava et al.</p>
-                <p>
-                    A methodology for understanding how LLMs alter behavior when they detect evaluation contexts. The
-                    work introduces Awareness Elasticity and provides a framework for measuring benchmark-deployment
-                    performance gaps.
-                </p>
-                <a href="https://arxiv.org/abs/2509.00591" target="_blank" rel="noopener noreferrer"
-                    class="inline-link">arXiv:2509.00591</a>
-            </article>
-        </section>
-
         <section id="skills" class="section skills">
             <div class="section-heading">
                 <p class="section-kicker">[05] skills</p>
@@ -514,9 +529,9 @@
 
     <footer class="footer">
         <div class="footer-links">
+            <a href="#publication">research</a>
             <a href="#about">about</a>
             <a href="#experience">work</a>
-            <a href="#publication">research</a>
             <a href="#skills">skills</a>
             <a href="#contact">contact</a>
         </div>

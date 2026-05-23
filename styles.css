@@ -25,7 +25,7 @@
         Consolas, "Liberation Mono", "Courier New", monospace;
     --container: 960px;
     --section-gap: 96px;
-    --nav-height: 56px;
+    --nav-height: 52px;
     --radius-sm: 4px;
     --transition: 180ms ease;
 }
@@ -127,11 +127,11 @@ textarea {
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
-    gap: 24px;
-    padding: 0 max(24px, calc((100vw - 1120px) / 2));
-    background: color-mix(in srgb, var(--canvas) 92%, transparent);
+    gap: 16px;
+    padding: 0 24px;
+    background: color-mix(in srgb, var(--canvas) 96%, transparent);
     border-bottom: 1px solid var(--hairline);
-    backdrop-filter: blur(18px);
+    backdrop-filter: blur(12px);
 }
 
 .primary-nav::after {
@@ -151,12 +151,14 @@ textarea {
     gap: 12px;
     font-weight: 700;
     min-height: var(--nav-height);
+    padding-right: 16px;
+    border-right: 1px solid var(--hairline);
 }
 
 .brand-mark {
-    color: var(--success);
-    background: var(--surface-soft);
-    border: 1px solid var(--hairline);
+    color: var(--canvas);
+    background: var(--ink);
+    border: 1px solid var(--ink);
     border-radius: var(--radius-sm);
     padding: 2px 10px;
 }
@@ -182,11 +184,11 @@ textarea {
     align-items: center;
     gap: 8px;
     color: var(--body);
-    min-height: 32px;
-    padding: 4px 9px;
+    min-height: 30px;
+    padding: 3px 8px;
     border: 1px solid var(--hairline);
     border-radius: var(--radius-sm);
-    background: color-mix(in srgb, var(--surface-soft) 78%, transparent);
+    background: transparent;
     white-space: nowrap;
     transition: background var(--transition), color var(--transition), border-color var(--transition);
 }
@@ -200,7 +202,11 @@ textarea {
 }
 
 .nav-cmd {
-    color: var(--mute);
+    color: var(--canvas);
+    background: var(--ink);
+    border: 1px solid var(--ink);
+    border-radius: 2px;
+    padding: 0 4px;
     font-size: 12px;
     line-height: 1;
 }
@@ -211,7 +217,9 @@ textarea {
 }
 
 .nav-menu a.active .nav-cmd {
-    color: var(--canvas);
+    color: var(--ink);
+    background: var(--canvas);
+    border-color: var(--canvas);
 }
 
 .theme-toggle {
@@ -229,8 +237,14 @@ textarea {
     border: 1px solid var(--ink);
     border-radius: var(--radius-sm);
     min-height: 32px;
-    padding: 4px 14px;
+    padding: 4px 12px;
     line-height: 1.45;
+}
+
+.nav-menu .nav-action .nav-cmd {
+    color: var(--ink);
+    background: var(--canvas);
+    border-color: var(--canvas);
 }
 
 .nav-menu .nav-action:hover {
@@ -256,7 +270,7 @@ textarea {
     min-height: 520px;
     display: flex;
     align-items: center;
-    padding: 48px max(24px, calc((100vw - 1120px) / 2)) 64px;
+    padding: 24px max(24px, calc((100vw - 1120px) / 2)) 32px;
 }
 
 .section-kicker,
@@ -307,13 +321,11 @@ textarea {
 .hero-terminal {
     position: relative;
     color: var(--terminal-fg);
-    background:
-        linear-gradient(180deg, color-mix(in srgb, var(--surface-soft) 58%, transparent), transparent 46%),
-        var(--terminal-bg);
+    background: var(--terminal-bg);
     width: min(100%, 1120px);
     margin: 0 auto;
-    padding: 32px;
-    border: 1px solid var(--hairline);
+    padding: 20px 32px 24px;
+    border: 1px solid var(--hairline-strong);
     box-shadow: none;
     overflow: hidden;
 }
@@ -325,10 +337,10 @@ textarea {
     background: repeating-linear-gradient(
         180deg,
         transparent 0,
-        transparent 9px,
-        color-mix(in srgb, var(--hairline-strong) 14%, transparent) 10px
+        transparent 15px,
+        color-mix(in srgb, var(--hairline-strong) 12%, transparent) 16px
     );
-    opacity: 0.26;
+    opacity: 0.14;
     pointer-events: none;
 }
 
@@ -346,10 +358,10 @@ textarea {
 }
 
 .terminal-head {
-    margin: -32px -32px 28px;
-    padding: 12px 32px;
+    margin: -20px -32px 18px;
+    padding: 6px 32px;
     color: var(--terminal-muted);
-    background: color-mix(in srgb, var(--terminal-row-bg) 76%, transparent);
+    background: color-mix(in srgb, var(--terminal-row-bg) 86%, transparent);
     border-bottom: 1px solid var(--hairline);
     font-size: 14px;
     line-height: 2;
@@ -359,6 +371,18 @@ textarea {
     display: inline-flex;
     align-items: center;
     gap: 8px;
+}
+
+.terminal-status {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 6px 16px;
+    text-align: right;
+}
+
+.terminal-path {
+    color: var(--terminal-fg);
 }
 
 .terminal-light {
@@ -388,8 +412,8 @@ textarea {
 .terminal-title {
     display: grid;
     gap: 8px;
-    margin-bottom: 28px;
-    padding: 2px 0 24px;
+    margin-bottom: 18px;
+    padding: 2px 0 16px;
     border-bottom: 1px solid var(--hairline);
 }
 
@@ -399,8 +423,10 @@ textarea {
     color: var(--terminal-muted);
 }
 
-.terminal-line span {
-    color: var(--success);
+.prompt-label,
+.terminal-line .prompt-label {
+    color: var(--terminal-fg);
+    font-weight: 700;
 }
 
 .terminal-output {
@@ -408,18 +434,8 @@ textarea {
 }
 
 .terminal-name-shell {
-    display: grid;
-    grid-template-columns: auto minmax(0, 1fr);
-    gap: 18px;
-    align-items: start;
-    margin: 12px 0 14px;
-}
-
-.terminal-output-mark {
-    color: var(--success);
-    font-size: clamp(1.85rem, 4vw, 3.6rem);
-    line-height: 1;
-    font-weight: 700;
+    display: block;
+    margin: 6px 0 8px;
 }
 
 .terminal-ascii {
@@ -436,20 +452,27 @@ textarea {
     white-space: pre;
 }
 
+.terminal-ascii-line {
+    display: inline;
+    opacity: 0;
+    animation: ascii-line 70ms steps(1, end) forwards;
+    animation-delay: calc(120ms + (var(--line) * 58ms));
+}
+
 .terminal-block-cursor {
     display: inline-block;
-    width: 0.62em;
-    height: 1.08em;
+    width: 0.68em;
+    height: 1.04em;
     margin-left: 0.32em;
     background: var(--cursor-bg);
-    vertical-align: -0.16em;
-    animation: terminal-caret 1s step-end infinite;
+    vertical-align: -0.14em;
+    animation: terminal-caret 1060ms steps(1, end) infinite;
 }
 
 .terminal-tabs {
     justify-content: flex-start;
     flex-wrap: wrap;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 }
 
 .terminal-tab {
@@ -481,6 +504,7 @@ textarea {
     display: flex;
     gap: 10px;
     align-items: flex-start;
+    overflow-wrap: anywhere;
 }
 
 .prompt-pipe {
@@ -489,7 +513,7 @@ textarea {
 
 .terminal-panels {
     display: grid;
-    margin: 20px 0 28px;
+    margin: 10px 0 16px;
 }
 
 .terminal-panel {
@@ -508,7 +532,53 @@ textarea {
 }
 
 .terminal-panel span {
-    color: var(--success);
+    color: var(--terminal-fg);
+    font-weight: 700;
+}
+
+.terminal-response {
+    margin: 8px 0 0;
+    color: var(--terminal-muted);
+}
+
+.terminal-response::before {
+    content: "stdout: ";
+    color: var(--terminal-fg);
+}
+
+.terminal-command-links {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.terminal-command-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 34px;
+    padding: 4px 10px;
+    color: var(--terminal-fg);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-sm);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+    background: transparent;
+    transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.terminal-command-links a::before {
+    content: "$ ";
+    color: var(--terminal-muted);
+    text-decoration: none;
+}
+
+.terminal-command-links a:hover {
+    color: var(--canvas);
+    background: var(--ink);
+    border-color: var(--ink);
 }
 
 .terminal-footer {
@@ -524,6 +594,15 @@ textarea {
     color: var(--terminal-fg);
     text-decoration: underline;
     text-underline-offset: 3px;
+}
+
+.terminal-pulse {
+    animation: terminal-pulse 180ms ease;
+}
+
+.terminal-response.is-updated,
+.terminal-panel.is-switching {
+    animation: terminal-output 220ms ease;
 }
 
 .section {
@@ -730,6 +809,11 @@ textarea {
     border-bottom: 1px solid var(--hairline);
 }
 
+.publication-panel-featured {
+    border-top-color: var(--ink);
+    border-top-width: 2px;
+}
+
 .publication-meta {
     display: flex;
     flex-wrap: wrap;
@@ -746,7 +830,12 @@ textarea {
     display: inline-block;
     color: var(--ink);
     text-decoration: underline;
+    text-decoration-thickness: 1px;
     text-underline-offset: 3px;
+}
+
+.inline-link::after {
+    content: " ->";
 }
 
 .skill-columns {
@@ -858,6 +947,35 @@ textarea {
     50%,
     100% {
         opacity: 0;
+    }
+}
+
+@keyframes ascii-line {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes terminal-output {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes terminal-pulse {
+    0%,
+    100% {
+        border-color: var(--hairline);
+    }
+
+    50% {
+        border-color: var(--ink);
     }
 }
 
@@ -995,6 +1113,10 @@ textarea {
     .contact-grid {
         grid-template-columns: 1fr;
     }
+
+    .terminal-command-links {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
 @media (max-width: 640px) {
@@ -1030,8 +1152,32 @@ textarea {
     }
 
     .terminal-head {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2px;
         margin: -20px -16px 22px;
         padding: 10px 16px;
+        align-items: flex-start;
+    }
+
+    .terminal-window,
+    .terminal-status {
+        min-width: 0;
+    }
+
+    .terminal-path {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .terminal-status {
+        justify-content: flex-start;
+        text-align: left;
+    }
+
+    .terminal-status span {
+        white-space: nowrap;
     }
 
     .terminal-title {
@@ -1044,6 +1190,12 @@ textarea {
         margin: 20px 0;
     }
 
+    .terminal-prompt {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+
     .terminal-footer {
         font-size: 13px;
         line-height: 1.6;
@@ -1052,6 +1204,10 @@ textarea {
     .terminal-panel {
         grid-template-columns: 1fr 1fr;
         gap: 6px 12px;
+    }
+
+    .terminal-command-links {
+        grid-template-columns: 1fr;
     }
 
     .section {
@@ -1105,5 +1261,10 @@ textarea {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
+    }
+
+    .terminal-ascii-line {
+        opacity: 1;
+        animation: none !important;
     }
 }
