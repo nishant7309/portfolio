@@ -195,7 +195,8 @@ textarea {
 
 .nav-menu a:hover,
 .nav-menu a.active,
-.theme-toggle:hover {
+.theme-toggle:hover,
+.theme-toggle[aria-pressed="true"] {
     color: var(--ink);
     border-color: var(--ink);
     background: var(--surface-soft);
@@ -228,28 +229,13 @@ textarea {
 }
 
 .theme-token {
-    color: var(--mute);
-}
-
-.nav-menu .nav-action {
     color: var(--canvas);
     background: var(--ink);
     border: 1px solid var(--ink);
-    border-radius: var(--radius-sm);
-    min-height: 32px;
-    padding: 4px 12px;
-    line-height: 1.45;
-}
-
-.nav-menu .nav-action .nav-cmd {
-    color: var(--ink);
-    background: var(--canvas);
-    border-color: var(--canvas);
-}
-
-.nav-menu .nav-action:hover {
-    color: var(--canvas);
-    background: var(--ink-deep);
+    border-radius: 2px;
+    padding: 0 4px;
+    font-size: 12px;
+    line-height: 1;
 }
 
 .nav-toggle {
@@ -442,7 +428,7 @@ textarea {
     display: inline-block;
     max-width: 100%;
     margin: 0;
-    overflow: hidden;
+    overflow: visible;
     color: var(--terminal-fg);
     font-family: var(--font-mono);
     font-size: clamp(0.38rem, 1.02vw, 0.82rem);
@@ -450,13 +436,7 @@ textarea {
     line-height: 1.06;
     letter-spacing: 0;
     white-space: pre;
-}
-
-.terminal-ascii-line {
-    display: inline;
-    opacity: 0;
-    animation: ascii-line 70ms steps(1, end) forwards;
-    animation-delay: calc(120ms + (var(--line) * 58ms));
+    animation: terminal-output 160ms steps(2, end) 90ms both;
 }
 
 .terminal-block-cursor {
@@ -950,12 +930,6 @@ textarea {
     }
 }
 
-@keyframes ascii-line {
-    to {
-        opacity: 1;
-    }
-}
-
 @keyframes terminal-output {
     from {
         opacity: 0;
@@ -1042,10 +1016,6 @@ textarea {
         border-color: transparent;
     }
 
-    .nav-menu .nav-action {
-        display: inline-flex;
-        margin-top: 12px;
-    }
 }
 
 @media (max-width: 920px) {
@@ -1100,11 +1070,6 @@ textarea {
         justify-content: space-between;
         padding: 12px 0;
         border-color: transparent;
-    }
-
-    .nav-menu .nav-action {
-        display: inline-flex;
-        margin-top: 12px;
     }
 
     .two-column,
@@ -1263,7 +1228,7 @@ textarea {
         transition-duration: 0.01ms !important;
     }
 
-    .terminal-ascii-line {
+    .terminal-ascii {
         opacity: 1;
         animation: none !important;
     }

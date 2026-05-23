@@ -147,7 +147,7 @@ Nishant's portfolio should feel like a precise black-and-white terminal session:
 
 ## Interaction Thesis
 
-- The ASCII name appears line by line once, as if `figlet "Nishant Bhargava"` just ran.
+- The ASCII name appears as one fast command-output block, as if `figlet "Nishant Bhargava"` returned immediately.
 - Terminal tabs update the command prompt, stdout line, mode label, and panel output.
 - Quick terminal commands update the prompt before navigating to papers, work, resume, or email.
 
@@ -177,6 +177,7 @@ No UI state depends on hue. The site uses:
 - Dark mode is the default because the terminal is the brand anchor.
 - Light mode remains available and must preserve the same monochrome hierarchy.
 - Switching themes should update the nav label, terminal status label, background, foreground, and cursor color.
+- Theme and resume controls should match the same command-chip button treatment as the rest of the nav.
 - Do not introduce blue, green, orange, red, purple, gradients, glows, or halos.
 
 ## Link Rules
