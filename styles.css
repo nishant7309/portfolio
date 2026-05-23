@@ -305,11 +305,17 @@ textarea {
 .hero-terminal {
     position: relative;
     color: var(--terminal-fg);
-    background: var(--terminal-bg);
+    background:
+        linear-gradient(180deg, color-mix(in srgb, var(--surface-soft) 72%, transparent), transparent 42%),
+        var(--terminal-bg);
     width: min(100%, 1120px);
     margin: 0 auto;
     padding: 32px;
     border: 1px solid var(--hairline);
+    box-shadow:
+        inset 0 1px 0 color-mix(in srgb, var(--ink) 8%, transparent),
+        inset 0 -1px 0 color-mix(in srgb, var(--canvas) 70%, transparent),
+        0 28px 70px color-mix(in srgb, var(--ink) 10%, transparent);
     overflow: hidden;
 }
 
@@ -317,16 +323,29 @@ textarea {
     content: "";
     position: absolute;
     inset: 0;
-    background:
-        linear-gradient(var(--hairline) 1px, transparent 1px),
-        linear-gradient(90deg, var(--hairline) 1px, transparent 1px);
-    background-size: 100% 28px, 28px 100%;
-    opacity: 0.18;
+    background: repeating-linear-gradient(
+        180deg,
+        transparent 0,
+        transparent 9px,
+        color-mix(in srgb, var(--hairline-strong) 14%, transparent) 10px
+    );
+    opacity: 0.26;
+    pointer-events: none;
+}
+
+.hero-terminal::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 8%, transparent), transparent 20% 80%,
+            color-mix(in srgb, var(--accent) 5%, transparent));
+    opacity: 0.24;
     pointer-events: none;
 }
 
 .hero-terminal > * {
     position: relative;
+    z-index: 1;
 }
 
 .terminal-head,
@@ -338,8 +357,11 @@ textarea {
 }
 
 .terminal-head {
-    margin-bottom: 32px;
+    margin: -32px -32px 28px;
+    padding: 12px 32px;
     color: var(--terminal-muted);
+    background: color-mix(in srgb, var(--terminal-row-bg) 76%, transparent);
+    border-bottom: 1px solid var(--hairline);
     font-size: 14px;
     line-height: 2;
 }
@@ -378,8 +400,7 @@ textarea {
     display: grid;
     gap: 8px;
     margin-bottom: 28px;
-    padding: 20px 0;
-    border-top: 1px solid var(--hairline);
+    padding: 2px 0 24px;
     border-bottom: 1px solid var(--hairline);
 }
 
@@ -400,9 +421,9 @@ textarea {
 .terminal-name-shell {
     display: grid;
     grid-template-columns: auto minmax(0, 1fr);
-    gap: 16px;
+    gap: 18px;
     align-items: start;
-    margin: 10px 0 12px;
+    margin: 12px 0 14px;
 }
 
 .terminal-output-mark {
@@ -419,9 +440,9 @@ textarea {
     overflow: hidden;
     color: var(--terminal-fg);
     font-family: var(--font-mono);
-    font-size: clamp(0.39rem, 0.92vw, 0.78rem);
+    font-size: clamp(0.38rem, 1.02vw, 0.82rem);
     font-weight: 700;
-    line-height: 1.02;
+    line-height: 1.06;
     letter-spacing: 0;
     white-space: pre;
 }
@@ -1009,6 +1030,11 @@ textarea {
 
     .hero-terminal {
         padding: 20px 16px;
+    }
+
+    .terminal-head {
+        margin: -20px -16px 22px;
+        padding: 10px 16px;
     }
 
     .terminal-title {
