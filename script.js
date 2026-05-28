@@ -75,7 +75,7 @@ function initTerminalTabs() {
 
     const terminalCopy = {
         profile: {
-            command: "run profile --focus safety",
+            command: "run profile",
             response: "profile loaded: research, systems, papers"
         },
         research: {
