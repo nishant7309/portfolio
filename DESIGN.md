@@ -142,9 +142,10 @@ Nishant's portfolio should feel like a precise black-and-white terminal session:
 1. Hero terminal: identity, role, live command prompt, quick commands, and tabbed output.
 2. Publications: placed immediately after the hero because papers are the highest-signal proof.
 3. About: personal research motivation and education details.
-4. Beyond: books, movies, and shows for personality.
-5. Work: experience timeline.
-6. Skills and contact: stack, links, and open channel.
+4. Work: experience timeline.
+5. Skills: working stack.
+6. Beyond: books, movies, and shows for personality, positioned near the bottom before contact.
+7. Contact: links and open channel.
 
 ## Interaction Thesis
 
@@ -203,6 +204,7 @@ No UI state depends on hue. The site uses:
 - Keep every visible UI element black, white, or neutral gray.
 - Use command chips to clarify that nav items are buttons.
 - Put publications before personality sections.
+- Keep the personality-heavy beyond section near the bottom, just before contact.
 - Use border weight, underline, spacing, and inversion for hierarchy.
 - Verify both dark and light mode before shipping.
 
