@@ -76,7 +76,7 @@ function initTerminalTabs() {
     const terminalCopy = {
         profile: {
             command: "run profile",
-            response: "profile loaded: research, systems, papers"
+            response: "profile loaded: ESRT, research, systems"
         },
         research: {
             command: "ls papers --sort signal",
